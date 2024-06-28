@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Aula 06</title>
+</head>
+<body>
+  <header><h1>Calcular Idade</h1></header>
+  <section>
+    <div class="main">
+      <div> 
+      <p> Ano de Nascimento:  <input type="number" name="nascimentodata" id="nascimentodata" ></p>
+     </div>
+    
+     <div>
+      <p> 
+        Sexo:  
+        <input type="radio" name="genero" id="M" checked>
+        <label for="M">Masculino</label>
+        <input type="radio" name="genero" id="F">
+        <label for="F">Feminino</label>
+      </p> 
+     </div>
+    
+     <input  id="btn" type="button" value="Calcular" onclick="carregar()">
+    </div>
+
+    <div id="res">
+      Preeencha os dados acima para ver o resultado!
+    </div>
+
+ </section>
+ <footer><p> &copy; JoãoPauloS.S. </p></footer>
+<script src="script.js"></script>
+</body>
+</html>

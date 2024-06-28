@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Aula 06</title>
+</head>
+<body>
+  <h1>Eventos DOM</h1>
+
+  <div id="area" onclick="clicar()">
+    Iinteraja...
+  </div>
+  
+  <script>
+    var area = document.getElementById('area'); // isso não pode, é só para estudos
+    
+    area.addEventListener('mouseenter', entrar);
+    area.addEventListener('mouseout', sair);
+
+    function clicar() {
+      area.style.backgroundColor = "#ff0000";
+      area.innerText = 'Clicou';
+    };
+
+    function entrar() {
+      area.style.backgroundColor = "#00a194";
+      area.innerText = 'Entrou';
+    };
+    
+    function sair() {
+      area.style.backgroundColor = "#002fff";
+      area.innerText = 'Saiu';
+    };
+
+  </script>
+</body>
+</html>
