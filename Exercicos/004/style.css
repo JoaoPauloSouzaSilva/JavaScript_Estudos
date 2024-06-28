@@ -25,19 +25,29 @@ section{
   justify-content: center;
   align-items: center;
   box-shadow: 5px 5px 8px #33333391;
+  padding: 1%;
 }
 
-img{
-  width: 20vw;
-  height: 40vh;
-  border-radius: 100%;
-  margin: 1vw;
+input{
+  border: solid 1px #3a3a3a;
+  border-radius: 6px;
+  width: 40%;
+  height: 3vh;
 }
 
-#msg{
- font-size: 20pt;
- padding: 1%;
- margin-top: 2%;
+#button{
+  width: 50%;
+  height: 4vh;
+  margin-top: 0%;
+  font: normal 15pt arial;
+  color: white;
+  background-color: rgb(59, 138, 255);
+  margin-bottom: 4%;
+}
+
+
+select{
+  width: 7vw;
 }
 
 footer{
