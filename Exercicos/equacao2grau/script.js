@@ -10,19 +10,48 @@ function calc(){
   var inputC = document.getElementById('c');
   var c = Number(inputC.value);
 
-  if (a === 0) {
-    var resultado = c / b;
-    console.log(resultado);
-    res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: <strong>${resultado}</strong>`; 
-    console.log('entrou');
-  }
+  if (a == 0 && b == 0 && c == 0) {
+    ABCzero();
+  }else if (a == 0 && b != 0 && c != 0) {
+    Azero();
+  }else if (a != 0 && b == 0 && c !=0) {
+    Bzero();
+  }else if (a != 0 && b != 0 && c == 0) {
+    Czero();
+  }else if (a == 0 && b == 0 && c !=0) {
+    ABzero();
+  }else if (a == 0 && b != 0 && c == 0) {
+    ACzero();
+  }else if (a != 0 && b == 0 && c ==0) {
+    BCzero();
+  }else {
+    ABCnum();
+  };
 
-  if (b === 0) {
-    var x1;
-    var x2;
-    var verificaRaiz;
+  function clearinput() {
+    inputA.value= '';
+    inputA.focus();
+    inputB.value= '';
+    inputC.value= '';
+  };
+
+  function ABCzero() {
+    res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: <strong>X é qualquer valor real</strong>`;
+    clearinput();
+  };
+
+  function Azero() {
+    let resultado = (c * -1)/ b;
+    res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: <strong>${resultado}</strong>`;
+    clearinput();
+  };
+
+  function Bzero() {
+    let x1;
+    let x2;
+    let verificaRaiz;
   
-    var verifica = -c / a;
+    let verifica = -c / a;
 
     if (verifica < 0) {
       verificaRaiz = Math.sqrt(verifica * -1);
@@ -34,34 +63,54 @@ function calc(){
       x1 = verificaRaiz;
       x2 = -verificaRaiz;
       res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: As raizes são <strong>${x1}</strong> e <strong>${x2}</strong> `; 
-    }
-  }
+    };
+    clearinput();
+  };
 
-  if (c === 0) {
-    var solucao = (b / a) * -1;
-    // a outra raiz é 0 
-    res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: As raizes são <strong>${solucao}</strong> e <strong>0</strong> `; 
-  }
+  function Czero() {
+    let solucao = (b / a) * -1;
+    res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: As raizes são <strong>${solucao}</strong> e <strong>0</strong> `;
+    clearinput();
+  };
 
-  var delta = b**2 - 4 * a * c;
+  function ABzero() {
+    res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: <strong>Não há valor de x que satisfaça essa equação.</strong>`;
+    clearinput(); 
+  };
 
-  if (delta > 0) {
-    var raiz1  = (-b -Math.sqrt(delta))/(2 * a);
-    var raiz2 = (-b +Math.sqrt(delta))/(2 * a);
-    res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: As raizes são <strong>${raiz1}</strong> e <strong>${raiz2}</strong> `;
-  } else if (delta === 0 ) {
-    var raiz = -b / (2 * a);
-    //soluções iguais
-    res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: As raiz é <strong>${raiz}</strong>`;
-  } else{
-    var alteradelta = delta * - 1;
-    alteradelta = Math.sqrt(alteradelta);
-    alteradelta = alteradelta / (2 * a);
-    var divideb = -b / (2 * a);
-    var raizImag1 = `${divideb} + ${alteradelta}i`;
-    var raizImag2 = `${divideb} - ${alteradelta}i`;
-    res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: As raizes imaginarias são <strong>${raizImag1}</strong> e <strong>${raizImag2}</strong> `;
-  }
+  function ACzero() {
+    res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: <strong>x = 0</strong>`;
+    clearinput();
+  };
+
+  function BCzero() {
+    res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: <strong>x = 0</strong>`;
+    clearinput();
+  };
+
+  function ABCnum() {
+    let delta = b**2 - 4 * a * c;
+
+    if (delta > 0) {
+      let raiz1  = (-b -Math.sqrt(delta))/(2 * a);
+      let raiz2 = (-b +Math.sqrt(delta))/(2 * a);
+      res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: As raizes são <strong>${raiz1}</strong> e <strong>${raiz2}</strong> `;
+
+    } else if (delta === 0 ) {
+      let raiz = -b / (2 * a);
+      res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: A raiz única é <strong>${raiz}</strong>`;
+      
+    } else{
+      let alteradelta = Math.sqrt(delta * - 1)/ (2 * a);
+      let divideb = -b / (2 * a);
+      let raizImag1 = `${divideb} + ${alteradelta}i`;
+      let raizImag2 = `${divideb} - ${alteradelta}i`;
+      res.innerHTML = `A solução para ${a}x² + ${b}x + ${c} <br/> Resolução: As raizes imaginarias são <strong>${raizImag1}</strong> e <strong>${raizImag2}</strong> `;
+
+    };
+
+    clearinput();
+  };
   
   /*
     O objeto Math em JavaScript é uma biblioteca 
