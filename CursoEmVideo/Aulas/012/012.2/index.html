@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Aula 06</title>
+</head>
+<body>
+  <h1>Condicional</h1>
+  <div id="dia">#</div>
+
+ 
+  
+  <script>
+  var dia = document.getElementById('dia');
+  var date = new Date();
+  var numdia = date.getDay();
+
+  /*
+    mais fácil criar um array com os dias da semana 
+    e o switch acessa o valor do dia pelo indice do array
+    (Apesar dos dias nunca mudarem)
+  */
+  
+  switch (numdia) {
+    case 0:
+      dia.innerHTML = 'Hoje é <strong>Domingo</strong>';
+      break;
+
+    case 1:
+      dia.innerHTML = 'Hoje é <strong>Segunda</strong>';
+      break;
+
+    case 2:
+      dia.innerHTML = 'Hoje é <strong>Terça</strong>';
+      break;
+
+    case 3:
+      dia.innerHTML = 'Hoje é <strong>Quarta</strong>';
+      break;
+
+    case 4:
+      dia.innerHTML = 'Hoje é <strong>Quinta</strong>';
+      break;
+
+    case 5:
+      dia.innerHTML = 'Hoje é <strong>Sexta</strong>';
+      break;
+
+    case 6:
+      dia.innerHTML = 'Hoje é <strong>Sábado</strong>';
+      break;
+      
+    default:
+      dia.innerHTML = '<strong>Dia Inválido</strong>';
+      break;
+  }
+
+  </script>
+</body>
+</html>
