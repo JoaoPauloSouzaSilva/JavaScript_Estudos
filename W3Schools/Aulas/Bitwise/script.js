@@ -23,7 +23,7 @@ console.log(`${a.toString(2)} & ${b.toString(2)} = ${c.toString(2)}`);
 
 //______________________________________________________________________________
 
-// OR bitwise ( ^ )
+// OR bitwise ( | )
 var a1 = 5;
 var b1 = 3;
 var c1 = a1 | b1;
@@ -133,4 +133,20 @@ console.log(`${a6.toString(2)} >>> ${b6.toString(2)} = ${c6.toString(2)}`);
       ^^                               ^^
 1073741822 -> 00111111 11111111 11111111 11111110
               ^^                               ^^   
+*/
+
+//______________________________________________________________________________
+
+//Operadoresde atribuições bita a bit 
+    let x = -100;
+    x >>>= 5;
+//     ^^ 
+/*
+  Operator	    Example	      Same As
+    &=	        x &= y	      x = x & y
+    ^=          x ^= y	      x = x ^ y
+    |=          x |= y	      x = x | y
+    <<=	        x <<= y	      x = x << y
+    >>=	        x >>= y	      x = x >> y
+    >>>=	      x >>>= y	    x = x >>> y
 */
